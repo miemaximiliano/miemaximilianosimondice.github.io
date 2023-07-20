@@ -1,0 +1,167 @@
+    body {
+      background-color: #000000;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 60px;
+      transform: skew(-10deg) rotateX(10deg);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+                  0 0 10px #ff0000,
+                  0 0 20px #ff0000,
+                  0 0 30px #ff0000;
+    }
+
+    #juego {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    
+    .botondejuego {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+    }
+
+    #yellow {
+      background-color: #ffd700;
+    }
+    
+    #blue {
+      background-color: #0066cc;
+    }
+    
+    #red {
+      background-color: #cc0000;
+    }
+    
+    #green {
+      background-color: #00cc00;
+    }
+    
+    #Informacion {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #Informacion p {
+      margin-inline: 20px;
+    }
+
+    
+    #boton-empezar {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #Empezar {
+      background-color: #4caf50;
+      cursor: pointer;
+      padding: 10px 20px;
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 20px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      #juego {
+        max-width: 200px;
+      }
+
+      .botondejuego {
+        width: 90px;
+        height: 90px;
+        margin: 2px;
+      }
+    }
+    
+    #panel-informacion {
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+    }
+
+    #panel-informacion h2 {
+      color: #fff;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    #panel-informacion p {
+      color: #fff;
+      font-size: 16px;
+    }
+
+    #panel-controles {
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+    }
+
+    #panel-controles h2 {
+      color: #fff;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    #panel-controles ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #panel-controles li {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    #boton-mostrar {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #boton-mostrar label {
+      cursor: pointer;
+      background-color: #4caf50;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    #boton-mostrar input[type="checkbox"]:checked ~ #panel-informacion,
+    #boton-mostrar input[type="checkbox"]:checked ~ #panel-controles {
+      display: block;
+    }
+    
+    .modal {
+      display: none; 
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto; 
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto; 
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+    }

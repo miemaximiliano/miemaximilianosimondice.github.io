@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simon Dice</title>
+  <link href="style.css" rel="stylesheet" />
+  <script src="script.js" type="text/javascript" defer></script>
+</head>
+<body>
+  <header>
+    <h1>SIMON DICE</h1>
+    <div id="Informacion">
+      <p>TIEMPO: <span id="Tiempo">0</span>s</p>
+      <p>PUNTAJE: <span id="Puntaje">0</span></p>
+    </div>
+  </header>
+  <div id="juego">
+    <div class="botondejuego" id="yellow"></div>
+    <div class="botondejuego" id="blue"></div>
+    <div class="botondejuego" id="red"></div>
+    <div class="botondejuego" id="green"></div>
+  </div>
+  <div id="boton-empezar">
+    <button id="Empezar">Empezar</button>
+  </div>
+  <div id="boton-mostrar">
+    <input type="checkbox" id="mostrar-ocultar" />
+    <label for="mostrar-ocultar">Informacion y Controles de juego</label>
+    <div id="panel-controles">
+      <hr>
+      <h2>Controles del juego</h2>
+      <hr>
+      <ul>
+        <li>Presiona los botones de colores en el orden indicado por el juego.</li>
+        <li>Observa y recuerda la secuencia de luces que se muestra.</li>
+        <li>Reproduce la secuencia presionando los botones en el mismo orden.</li>
+      </ul>
+    </div>
+    <hr>
+    <div id="panel-informacion">
+      <h2>Informacion del juego</h2>
+      <hr>
+      <p>Simon Dice tine cuatro grandes botones de diferentes colores: rojo, verde, azul y amarillo. Los botones se iluminan aleatoriamente y el jugador debe reproducir la secuencia de luz sin cometer un error.</p>
+      <p>Simon Dice - Creado por Maximiliano Mie</p>
+    </div>
+  </div>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <strong>Perdiste</strong>
+      <p>Tiempo: <span id="modalTiempo"></span></p>
+      <p>Puntaje: <span id="modalPuntaje"></span></p>
+    </div>
+  </div>
+  
+</body>
+</html>
