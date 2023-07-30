@@ -1,56 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simon Dice</title>
   <link href="style.css" rel="stylesheet" />
   <script src="script.js" type="text/javascript" defer></script>
 </head>
 <body>
   <header>
-    <h1>SIMON DICE</h1>
+    <div id="boton-contacto">
+      <a href="./contacto.html" class="button">CONTACTO</a>
+    </div>
+    <a href="index.html"><img src="logo.png" alt="LOGO"></a>
     <div id="Informacion">
       <p>TIEMPO: <span id="Tiempo">0</span>s</p>
       <p>PUNTAJE: <span id="Puntaje">0</span></p>
+      <p>Nivel: <span id="Nivel">0</span></p>
     </div>
   </header>
   <div id="juego">
-    <div class="botondejuego" id="yellow"></div>
-    <div class="botondejuego" id="blue"></div>
     <div class="botondejuego" id="red"></div>
+    <div class="botondejuego" id="yellow"></div>
     <div class="botondejuego" id="green"></div>
+    <div class="botondejuego" id="blue"></div>
   </div>
   <div id="boton-empezar">
-    <button id="Empezar">Empezar</button>
+    <input type="text" id="playerName" placeholder="Ingresa tu nombre" />
+    <button id="Empezar" onclick="startGame()">Empezar</button>
   </div>
-  <div id="boton-mostrar">
-    <input type="checkbox" id="mostrar-ocultar" />
-    <label for="mostrar-ocultar">Informacion y Controles de juego</label>
-    <div id="panel-controles">
+  <button id="mostrarPartidasBtn">Mostrar Partidas</button>
+    <div id="popup" style="display: none;">
+      <strong>Ranking de Partidas</strong>
+      <button id="cerrarPopupBtn">Cerrar</button>
       <hr>
-      <h2>Controles del juego</h2>
-      <hr>
-      <ul>
-        <li>Presiona los botones de colores en el orden indicado por el juego.</li>
-        <li>Observa y recuerda la secuencia de luces que se muestra.</li>
-        <li>Reproduce la secuencia presionando los botones en el mismo orden.</li>
-      </ul>
+      <ul id="listaPartidas"></ul>
     </div>
-    <hr>
-    <div id="panel-informacion">
-      <h2>Informacion del juego</h2>
-      <hr>
-      <p>Simon Dice tine cuatro grandes botones de diferentes colores: rojo, verde, azul y amarillo. Los botones se iluminan aleatoriamente y el jugador debe reproducir la secuencia de luz sin cometer un error.</p>
-      <p>Simon Dice - Creado por Maximiliano Mie</p>
+    <div id="boton-mostrar">
+      <input type="checkbox" id="mostrar-ocultar" />
+      <label for="mostrar-ocultar">Informacion y Controles de juego</label>
+      <div class="panel-contenedor">
+        <div id="panel-controles" class="panel">
+          <h1>Controles del juego</h1>
+          <ul>
+            <li>Presiona los botones de colores en el orden indicado por el juego.</li>
+            <li>Observa y recuerda la secuencia de luces que se muestra.</li>
+            <li>Reproduce la secuencia presionando los botones en el mismo orden.</li>
+          </ul>
+        </div>
+        <div id="panel-informacion" class="panel">
+          <h2>Informacion del juego</h2>
+          <p>Simon Dice tiene cuatro grandes botones de diferentes colores: rojo, verde, azul y amarillo.</p>
+          <p>Los botones se iluminan aleatoriamente y tu deberas reproducir la secuencia de luz sin cometer un error.</p>
+          <p>Simon Dice - Creado por Maximiliano Mie</p>
+          <a href="https://github.com/miemaximiliano/miemaximilianosimondice.github.io" target="_blank">
+            <img src="https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU" alt="Mi_Github" style="width: 30px; height: 30px;">
+        </a>        
+        </div>
+      </div>
     </div>
-  </div>
   <div id="myModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <strong>Perdiste</strong>
+      <strong>Perdiste <span id="nombreJugador"></span></strong> 
       <p>Tiempo: <span id="modalTiempo"></span></p>
       <p>Puntaje: <span id="modalPuntaje"></span></p>
+      <p>Nivel: <span id="modalNivel"></span></p>
+      <p>Penalizacion: <span id="modalPenalizacion"></span></p>
+      <p>Puntaje Final: <span id="modalPuntajeFinal"></span></p>
+      <button id="restartButton" onclick="restartGame()">VOLVER A JUGAR</button>
     </div>
-  </div>
-  
+  </div>  
 </body>
 </html>
