@@ -61,6 +61,8 @@
       secuencia2 = [];
       puntaje = 0;
       tiempo = 0;
+      nivel = 0;
+      niveles.innerHTML = nivel;
       puntuacion.innerHTML = puntaje;
       tiempoon.innerHTML = tiempo;
       buttons[1].style.opacity = 0.5;
